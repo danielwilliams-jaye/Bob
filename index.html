@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MrBeast 100% Real Totally Legit Crypto Giveaway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090c15;
+      --card: #121826;
+      --accent: #00ff66;
+      --danger: #ff2a5f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .fake-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .fake-badge {
+      display: inline-block;
+      background: rgba(0, 255, 102, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+    }
+
+    .scam-card {
+      background: var(--card);
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 32px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    .avatar-wrap {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      background: #252f48;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      box-shadow: 0 0 25px var(--accent);
+    }
+
+    .claim-amount {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 10px 0;
+    }
+
+    .promo-input {
+      width: 100%;
+      background: #090c15;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 16px 0;
+      outline: none;
+    }
+
+    .btn-claim {
+      width: 100%;
+      background: linear-gradient(135deg, #00ff66, #00b0ff);
+      color: #000;
+      border: none;
+      padding: 18px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 5px 25px rgba(0, 255, 102, 0.4);
+      transition: transform 0.1s ease;
+    }
+
+    .btn-claim:hover {
+      transform: scale(1.02);
+    }
+
+    /* FULL SCREEN ROAST OVERLAY */
+    #roastOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 5, 15, 0.95);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 24px;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    #roastOverlay.active {
+      display: flex;
+    }
+
+    /* DRAMATIC FRIEND POP-UP ANIMATION */
+    .friend-jumpscare-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: zoomInBlink 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes zoomInBlink {
+      0% {
+        transform: scale(0.1) rotate(-15deg);
+        opacity: 0;
+      }
+      80% {
+        transform: scale(1.15) rotate(5deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    .friend-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--danger);
+      box-shadow: 0 0 40px var(--danger), 0 0 80px rgba(255, 42, 95, 0.5);
+      margin-bottom: 12px;
+      animation: headWobble 1.5s infinite ease-in-out;
+    }
+
+    @keyframes headWobble {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .meme-caption {
+      background: #000;
+      border: 2px solid var(--danger);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 6px 16px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .roast-title {
+      font-family: 'Comic Neue', cursive;
+      font-size: 2.4rem;
+      color: var(--danger);
+      margin: 8px 0;
+      text-shadow: 0 0 15px rgba(255, 42, 95, 0.6);
+    }
+
+    .roast-card {
+      background: #171026;
+      border: 2px solid var(--danger);
+      border-radius: 18px;
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+
+    .btn-reset {
+      background: var(--danger);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 16px;
+      align-self: center;
+    }
+
+    /* Falling clown icons */
+    .clown {
+      position: fixed;
+      top: -50px;
+      font-size: 2.4rem;
+      pointer-events: none;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fake-header">
+    <div class="fake-badge">★ OFFICIAL REAL NOT-A-SCAM SPONSOR ★</div>
+    <h1>MrBeast Crypto Bonanza</h1>
+    <p style="color: #8fa0bc; margin-top: 6px;">"I am personally giving $3,500 to whoever clicks this!"</p>
+  </div>
+
+  <div class="scam-card">
+    <div class="avatar-wrap">🧔🏻‍♂️</div>
+    <div style="font-size: 0.9rem; color: #8fa0bc; font-weight: 700;">EXCLUSIVE PROMO BONUS WAITING</div>
+    <div class="claim-amount">$3,500.00 USDC</div>
+
+    <label style="font-size: 0.8rem; color: #8fa0bc; font-weight: 700; display: block; margin-top: 10px;">
+      ENTER SPECIAL PROMO CODE
+    </label>
+    <input type="text" id="promoInput" class="promo-input" value="CASH" />
+
+    <button class="btn-claim" id="claimBtn">⚡ CLAIM FREE MONEY NOW ⚡</button>
+  </div>
+
+  <!-- ROAST OVERLAY WITH FRIEND'S FACE -->
+  <div id="roastOverlay">
+    <div class="friend-jumpscare-box">
+      <!-- Reference the friend's photo here -->
+      <img src="friend.png" alt="Shocked face" class="friend-photo" id="friendImg" onerror="this.src='https://placehold.co/220x220/252f48/ffffff?text=Add+friend.png'">
+      <div class="meme-caption">POV: You thought MrBeast sent you $3,500</div>
+    </div>
+
+    <h2 class="roast-title">CERTIFIED GULLIBLE MOMENT 🤡</h2>
+
+    <div class="roast-card">
+      <div style="font-weight: 800; font-size: 1.05rem; color: #ff80a0;">Things you actually believed:</div>
+      <ul class="checklist">
+        <li>🚩 MrBeast launched a casino on a website called "sedowin.com"</li>
+        <li>🚩 Free $3,500 just for typing "CASH"</li>
+        <li>🚩 You can withdraw immediately after paying a small "activation fee"</li>
+        <li>🚩 Twitter verified badges mean 100% trustworthy</li>
+      </ul>
+      <p style="font-size: 0.82rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px;">
+        Bro, if it sounds too good to be true, you're about to fund someone's rent in another country!
+      </p>
+    </div>
+
+    <button class="btn-reset" id="resetBtn">I Promise To Stop Falling For Phishing</button>
+  </div>
+
+  <script>
+    const claimBtn = document.getElementById('claimBtn');
+    const roastOverlay = document.getElementById('roastOverlay');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Goofy Web Audio "Sad Trombone"
+    function playSadTrombone() {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const notes = [293.66, 277.18, 261.63, 246.94];
+      const durations = [0.22, 0.22, 0.22, 0.7];
+      let startTime = audioCtx.currentTime;
+
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, startTime);
+
+        if (i === 3) {
+          osc.frequency.exponentialRampToValueAtTime(180, startTime + durations[i]);
+        }
+
+        gain.gain.setValueAtTime(0.2, startTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, startTime + durations[i] - 0.05);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(startTime);
+        osc.stop(startTime + durations[i]);
+        startTime += durations[i];
+      });
+    }
+
+    // Shower of clown emojis
+    function spawnClowns() {
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          const clown = document.createElement('div');
+          clown.className = 'clown';
+          clown.textContent = ['🤡', '🎣', '💀', '💸', '🚨'][Math.floor(Math.random() * 5)];
+          clown.style.left = Math.random() * 95 + 'vw';
+          clown.style.animationDuration = (2 + Math.random() * 2) + 's';
+          document.body.appendChild(clown);
+
+          setTimeout(() => clown.remove(), 4000);
+        }, i * 80);
+      }
+    }
+
+    claimBtn.addEventListener('click', () => {
+      roastOverlay.classList.add('active');
+      playSadTrombone();
+      spawnClowns();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      roastOverlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
